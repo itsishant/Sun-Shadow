@@ -1,0 +1,25 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "This is a weather app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsishant/Weather-app.git"
+  },
+  "author": "Ishant Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsishant/Weather-app/issues"
+  },
+  "homepage": "https://github.com/itsishant/Weather-app#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.10.1",
+    "zod": "^3.24.2"
+  }
+}

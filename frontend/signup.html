@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sign.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="centered-container">
+        <h1>Sun Shadow</h1>
+    </div>
+    <div id="this">
+    <div id="heading">
+        <h2>Sign Up</h2>
+    </div>
+    <div class="user">
+        <input type="text" id="username" placeholder="username"> <br>
+        <br>
+        <input type="password" id="password" placeholder="password"> <br>
+        <br>
+        <button onclick="signup()">Sign up</button>
+    </div>
+</div>
+<script>
+    async function signup(){
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if(!username || !password){
+        alert("Please enter username and password!");
+    }
+
+   const get =  await fetch("http://localhost:4000/signup", {
+        method: "POST",
+        headers : {"Content-Type": "application/json"},
+        body: JSON.stringify({username, password})
+    });
+    
+    const message = get.json();
+    if(get.ok){
+        alert("Sign up successfully");
+        window.location.href = "index.html";
+    }
+}
+</script>
+</body>
+</html>

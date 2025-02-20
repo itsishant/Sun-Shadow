@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="centered-container">
+        <h1>Sun Shadow Weather App</h1>
+    </div>
+
+    <div class="box">
+        <input type="text" style="background-color:lightgoldenrodyellow;" id="city-name" placeholder="Enter city name">
+        <button onclick="search()">Search</button>
+        <button onclick="out()">Sign out</button>
+    </div>
+    <br></br>
+    <div id="weather-result">
+    </div>
+    <script>
+// weather api =>
+    function  search(){
+        const city = document.getElementById("city-name").value;
+
+        if(city){
+            alert("searching in progress"); 
+            document.getElementById("weather-result").innerHTML = "Weather info for  "+city+ " is unavailable";
+            const value = document.getElementById("weather-result").innerHTML;
+            const apiKey = `7a08c4955f8623bf7fb6b577002c9381`;
+            fetch(`API_KEY`)
+            .then (function(response){
+                return response.json();
+            })
+                .then(function(data) {
+                        const temperature = data.main.temp;
+
+                        document.getElementById("weather-result").innerHTML =
+                            `<h2>Temperature in ${city} is ${temperature}°C</h2>`;
+                    })
+    console.log(value);
+        }else{
+            alert("please enter a city name");
+        }
+    }
+
+    function out(){
+        if(out){
+            alert("sign out successfully");
+            window.location.href = "signup.html"
+        }
+    }
+</script>
+
+</body>
+
+</html>
