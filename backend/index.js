@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const {create} = require('./object');
-const {createUser, user} = require('./db');
+const {create } = require('./object');
+const { user } = require('./db');
 require("dotenv").config();
 const PORT = process.env.PORT;
 const port = 4000 || PORT;
